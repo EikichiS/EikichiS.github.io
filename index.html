@@ -42,61 +42,164 @@
       display: inline-block;
       margin: 8px;
       color: black;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      text-decoration: none;<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simón García | Backend Engineer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      scroll-behavior: smooth;
     }
 
-    .section {
-      max-width: 800px;
-      margin: auto;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(13, 17, 23, 0.8);
+      backdrop-filter: blur(8px);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #e6edf3;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       padding: 20px;
+    }
+
+    .profile {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00c2ff;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #00c2ff;
+      margin-bottom: 15px;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     .card {
       background: #161b22;
-      padding: 15px 20px;
+      padding: 20px;
       margin: 15px 0;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid #30363d;
+    }
+
+    .socials a {
+      margin: 10px;
+      font-size: 1.8rem;
+      color: #00c2ff;
+    }
+
+    .contact-btn {
+      background: #00c2ff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      font-size: 14px;
-      opacity: 0.6;
+      opacity: .6;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <img src="profile.jpeg" class="profile" alt="Profile photo">
-  <h1>Simón García</h1>
-  <p>Backend Engineer · Payment Integrations Specialist</p>
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <a class="btn" href="mailto:tuemail@gmail.com">Contact Me</a>
-  <a class="btn" href="https://www.linkedin.com/in/simón-garcía-leighton-064b67a2/" target="_blank">LinkedIn</a>
-  <a class="btn" href="https://github.com/EikichiS" target="_blank">GitHub</a>
-  <a class="btn" href="https://www.hackerrank.com/profile/EikichiS" target="_blank">HackerRank</a>
+<header>
+  <img src="profile.jpeg" class="profile" data-aos="fade-up">
+  <h1 data-aos="fade-up" data-aos-delay="200">Simón García</h1>
+  <p data-aos="fade-up" data-aos-delay="300">Backend Engineer · Payment Integrations Specialist</p>
+
+  <div class="socials" data-aos="fade-up" data-aos-delay="400">
+    <a href="https://www.linkedin.com/in/simón-garcía-leighton-064b67a2/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/EikichiS" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.hackerrank.com/profile/EikichiS" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
+  </div>
+
+  <a class="contact-btn" href="https://wa.me/569XXXXXXXX" target="_blank" data-aos="fade-up" data-aos-delay="500">
+    Hire Me
+  </a>
 </header>
 
-<div class="section">
+<section id="about" data-aos="fade-right">
   <h2>About Me</h2>
   <p>
-    I'm a Backend Software Engineer with experience integrating payment platforms
-    (Webpay, Klap), building microservices in Java/Spring Boot, and deploying solutions using AWS.
+    I'm a Backend Software Engineer specializing in payment integrations (Webpay, Klap),
+    microservices with Java/Spring Boot, and AWS deployments.
     I help businesses automate processes and accept online payments securely.
   </p>
+</section>
 
+<section id="skills" data-aos="fade-left">
   <h2>Skills</h2>
   <div class="card">Java · Spring Boot · Microservices</div>
   <div class="card">AWS · S3 · ECS · Lambda</div>
   <div class="card">Payment Integrations: Webpay, Klap</div>
   <div class="card">SQL · Oracle · MySQL</div>
   <div class="card">REST APIs · Feign · OAuth</div>
+</section>
 
+<section id="services" data-aos="fade-right">
   <h2>Services</h2>
   <div class="card">
     ✅ Webpay/Klap payment integration<br>
@@ -104,11 +207,21 @@
     ✅ Automation & AWS tasks<br>
     ✅ E-commerce payment setup
   </div>
-</div>
+</section>
+
+<section id="contact" data-aos="zoom-in">
+  <h2>Contact</h2>
+  <p>Let's work together!</p>
+  <a class="contact-btn" href="mailto:tuemail@gmail.com">Email Me</a>
+</section>
 
 <footer>
   © 2025 Simón García
 </footer>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 
 </body>
 </html>
