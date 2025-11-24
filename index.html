@@ -14,12 +14,21 @@
 
     header {
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 20px;
+    }
+
+    img.profile {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00c2ff;
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      font-size: 2.6rem;
+      margin-bottom: 5px;
     }
 
     h2 {
@@ -31,7 +40,7 @@
       background: #00c2ff;
       padding: 12px 20px;
       display: inline-block;
-      margin-top: 15px;
+      margin: 8px;
       color: black;
       text-decoration: none;
       border-radius: 6px;
@@ -63,10 +72,13 @@
 <body>
 
 <header>
+  <img src="profile.jpg" class="profile" alt="Profile photo">
   <h1>Simón García</h1>
   <p>Backend Engineer · Payment Integrations Specialist</p>
+
   <a class="btn" href="mailto:tuemail@gmail.com">Contact Me</a>
-  <br>
+  <a class="btn" href="https://www.linkedin.com/in/simón-garcía-leighton-064b67a2/" target="_blank">LinkedIn</a>
+  <a class="btn" href="https://github.com/EikichiS" target="_blank">GitHub</a>
   <a class="btn" href="https://www.hackerrank.com/profile/EikichiS" target="_blank">HackerRank</a>
 </header>
 
@@ -92,21 +104,6 @@
     ✅ Automation & AWS tasks<br>
     ✅ E-commerce payment setup
   </div>
-
-  <h2>Experience</h2>
-  <div class="card">
-    Backend Developer – Banco de Chile (SEIZA)<br>
-    Microservices · Credit modules · Oracle · Spring Boot
-  </div>
-  <div class="card">
-    Backend Developer – Banco BICE (Kibernum)<br>
-    International transfers · OpenShift · REST
-  </div>
-  <div class="card">
-    Fullstack Developer – Symbiose SPA<br>
-    Biometrics · Vue.js · Laravel
-  </div>
-
 </div>
 
 <footer>
