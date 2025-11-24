@@ -1,50 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simón García | Backend Engineer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0d1117;
-      color: #e6edf3;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    img.profile {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00c2ff;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      color: #00c2ff;
-      margin-top: 40px;
-    }
-
-    .btn {
-      background: #00c2ff;
-      padding: 12px 20px;
-      display: inline-block;
-      margin: 8px;
-      color: black;
-      text-decoration: none;<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simón García | Backend Engineer</title>
@@ -153,6 +109,27 @@
       padding: 30px;
       opacity: .6;
     }
+
+    .typing {
+      font-size: 1.4rem;
+      font-weight: 600;
+      height: 40px;
+      margin-top: 10px;
+    }
+
+    .cursor {
+      display: inline-block;
+      margin-left: 3px;
+      animation: blink 0.7s infinite;
+      color: #00c2ff;
+      font-weight: bold;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
   </style>
 </head>
 
@@ -168,7 +145,10 @@
 <header>
   <img src="profile.jpeg" class="profile" data-aos="fade-up">
   <h1 data-aos="fade-up" data-aos-delay="200">Simón García</h1>
-  <p data-aos="fade-up" data-aos-delay="300">Backend Engineer · Payment Integrations Specialist</p>
+
+  <div class="typing" data-aos="fade-up" data-aos-delay="300">
+    <span id="typing-text"></span><span class="cursor">|</span>
+  </div>
 
   <div class="socials" data-aos="fade-up" data-aos-delay="400">
     <a href="https://www.linkedin.com/in/simón-garcía-leighton-064b67a2/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -176,8 +156,12 @@
     <a href="https://www.hackerrank.com/profile/EikichiS" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
   </div>
 
-  <a class="contact-btn" href="https://wa.me/569XXXXXXXX" target="_blank" data-aos="fade-up" data-aos-delay="500">
-    Hire Me
+  <a class="contact-btn"
+     href="https://wa.me/56954798401?text=Hola%20Simón,%20vi%20tu%20portafolio%20y%20me%20gustaría%20cotizar%20integración%20Webpay/Klap"
+     target="_blank"
+     data-aos="fade-up"
+     data-aos-delay="500">
+     WhatsApp
   </a>
 </header>
 
@@ -219,9 +203,47 @@
   © 2025 Simón García
 </footer>
 
-<!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
+
+<script>
+const roles = [
+  "Backend Engineer",
+  "Payment Specialist",
+  "AWS Developer",
+  "Java Developer",
+  "Webpay/Klap Integrator"
+];
+
+let index = 0;
+let charIndex = 0;
+const typingText = document.getElementById("typing-text");
+
+function type() {
+  if (charIndex < roles[index].length) {
+    typingText.textContent += roles[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 80);
+  } else {
+    setTimeout(erase, 1200);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typingText.textContent = roles[index].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 40);
+  } else {
+    index = (index + 1) % roles.length;
+    setTimeout(type, 200);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  type();
+});
+</script>
 
 </body>
 </html>
