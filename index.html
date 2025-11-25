@@ -84,7 +84,7 @@
 
     section {
       padding: 80px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -140,10 +140,10 @@
       100% { opacity: 1; }
     }
 
-    /* TECH STACK */
+    /* TECH GRID */
     .tech-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 20px;
       margin-top: 20px;
       text-align: center;
@@ -168,12 +168,6 @@
       margin-bottom: 8px;
     }
 
-    .tech-grid span {
-      display: block;
-      margin-top: 5px;
-      font-size: .9rem;
-    }
-
     /* WHAT I DO */
     .what-grid {
       display: grid;
@@ -191,36 +185,86 @@
       transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     }
 
-    .what-card i {
-      font-size: 2.5rem;
-      color: #00c2ff;
-      margin-bottom: 15px;
-    }
-
-    .what-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .what-card p {
-      font-size: .9rem;
-      opacity: .8;
-    }
-
     .what-card:hover {
       transform: translateY(-8px);
       border-color: #00c2ff;
       box-shadow: 0 0 20px rgba(0, 194, 255, 0.3);
     }
 
-    /* CONTACT */
-    #contact {
-      text-align: center;
+    .what-card i {
+      font-size: 2.5rem;
+      color: #00c2ff;
+      margin-bottom: 15px;
     }
 
-    #contact p {
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background: rgba(22, 27, 34, 0.85);
+      border-radius: 12px;
+      border: 1px solid #30363d;
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0, 194, 255, 0.25);
+    }
+
+    .project-tag {
+      font-size: .8rem;
+      opacity: .7;
+      padding: 12px 20px 0;
+    }
+
+    .browser-mockup {
+      background: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .browser-dot {
+      width: 12px;
+      height: 12px;
+      background: #ff5f57;
+      border-radius: 50%;
+    }
+    .browser-dot:nth-child(2) { background: #ffbd2e; }
+    .browser-dot:nth-child(3) { background: #28c840; }
+
+    .project-image {
+      width: 100%;
+      display: block;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-buttons a {
+      display: inline-block;
+      margin-right: 10px;
       margin-top: 10px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      background: #00c2ff;
+      color: #000;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    #contact {
+      text-align: center;
     }
   </style>
 </head>
@@ -232,6 +276,7 @@
   <a href="#skills">Skills</a>
   <a href="#tech">Tech Stack</a>
   <a href="#whatido">What I Do</a>
+  <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -243,10 +288,9 @@
     <span id="typing-text"></span><span class="cursor">|</span>
   </div>
 
-  <div class="socials" data-aos="fade-up" data-aos-delay="400">
+  <div class="socials" data-aos="fade-up" data-aos-delay="400">  
     <a href="https://www.linkedin.com/in/simón-garcía-leighton-064b67a2/" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/EikichiS" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.hackerrank.com/profile/EikichiS" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
   </div>
 
   <a class="contact-btn"
@@ -263,8 +307,7 @@
   <p>
     I'm a Backend Software Engineer with 5+ years of experience building fintech and banking solutions in Chile.
     I specialize in payment integrations (Webpay, Klap), microservices with Java & Spring Boot, and AWS deployments.
-    I've worked on credit platforms, biometric authentication systems, and high-availability financial services used by thousands of users daily.
-    My focus is on delivering secure, scalable and maintainable solutions that provide real business value.
+    My focus is delivering secure, scalable and maintainable solutions that provide real business value.
   </p>
 </section>
 
@@ -316,8 +359,39 @@
     <div class="what-card">
       <i class="fa-solid fa-gauge-high"></i>
       <h3>Performance Optimization</h3>
-      <p>Database and backend optimization for speed, reliability and maintainability.</p>
+      <p>Backend and database optimization for speed, reliability and maintainability.</p>
     </div>
+  </div>
+</section>
+
+<section id="projects" data-aos="fade-up">
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT CARD -->
+    <div class="project-card">
+      <div class="project-tag">Vue.js · API · Crypto</div>
+
+      <div class="browser-mockup">
+        <div class="browser-dot"></div>
+        <div class="browser-dot"></div>
+        <div class="browser-dot"></div>
+      </div>
+
+      <img src="project-coins.png" class="project-image">
+
+      <div class="project-content">
+        <h3>CoinsDashboard</h3>
+        <p>A cryptocurrency dashboard built with Vue.js that consumes the CoinGecko API to display live market data and detailed coin information.</p>
+
+        <div class="project-buttons">
+          <a href="https://jolly-bardeen-16e3e9.netlify.app/" target="_blank">Live Demo</a>
+          <a href="https://github.com/EikichiS/CoinsDashboard" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -339,7 +413,6 @@ const roles = [
   "Backend Engineer",
   "Payment Specialist",
   "AWS Developer",
-  "Java Developer",
   "Webpay/Klap Integrator"
 ];
 
