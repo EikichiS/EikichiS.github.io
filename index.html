@@ -40,9 +40,11 @@
       backdrop-filter: blur(8px);
       padding: 15px 30px;
       display: flex;
-      justify-content: flex-end;
-      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
       z-index: 999;
+      font-size: 0.9rem;
     }
 
     nav a {
@@ -168,6 +170,12 @@
       margin-bottom: 8px;
     }
 
+    .tech-grid span {
+      display: block;
+      margin-top: 5px;
+      font-size: .9rem;
+    }
+
     /* WHAT I DO */
     .what-grid {
       display: grid;
@@ -195,6 +203,51 @@
       font-size: 2.5rem;
       color: #00c2ff;
       margin-bottom: 15px;
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .timeline {
+      position: relative;
+      margin-top: 30px;
+      padding-left: 25px;
+      border-left: 2px solid #30363d;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -8px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #00c2ff;
+    }
+
+    .timeline-content {
+      margin-left: 15px;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .timeline-company {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 6px;
     }
 
     /* PROJECTS */
@@ -263,8 +316,28 @@
       font-size: .9rem;
     }
 
+    /* GITHUB STATS */
+    .github-stats {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .github-stats img {
+      max-width: 100%;
+      border-radius: 10px;
+      border: 1px solid #30363d;
+      background: #0d1117;
+    }
+
     #contact {
       text-align: center;
+    }
+
+    #contact p {
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -273,10 +346,12 @@
 
 <nav>
   <a href="#about">About</a>
+  <a href="#experience">Experience</a>
   <a href="#skills">Skills</a>
   <a href="#tech">Tech Stack</a>
   <a href="#whatido">What I Do</a>
   <a href="#projects">Projects</a>
+  <a href="#github">GitHub</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -288,9 +363,10 @@
     <span id="typing-text"></span><span class="cursor">|</span>
   </div>
 
-  <div class="socials" data-aos="fade-up" data-aos-delay="400">  
+  <div class="socials" data-aos="fade-up" data-aos-delay="400">
     <a href="https://www.linkedin.com/in/simón-garcía-leighton-064b67a2/" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/EikichiS" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.hackerrank.com/profile/EikichiS" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
   </div>
 
   <a class="contact-btn"
@@ -307,8 +383,64 @@
   <p>
     I'm a Backend Software Engineer with 5+ years of experience building fintech and banking solutions in Chile.
     I specialize in payment integrations (Webpay, Klap), microservices with Java & Spring Boot, and AWS deployments.
+    I've worked on credit platforms, biometric authentication systems, and high-availability financial services used by thousands of users daily.
     My focus is delivering secure, scalable and maintainable solutions that provide real business value.
   </p>
+</section>
+
+<section id="experience" data-aos="fade-up">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">Sep 2025 – Present</span>
+        <div class="timeline-role">Software Engineer</div>
+        <div class="timeline-company">Bill-y · Santiago, Chile</div>
+        <p>Working on electronic invoicing and payment integrations, building backend services and automation around billing processes.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">May 2022 – Aug 2025</span>
+        <div class="timeline-role">Backend Developer</div>
+        <div class="timeline-company">SEIZA · Banco de Chile</div>
+        <p>Designed and implemented Java/Spring Boot microservices for credit modules (financial status, pre-approved loans, microcredits), optimized Oracle queries and integrated external credit bureau APIs.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">Sep 2021 – Apr 2022</span>
+        <div class="timeline-role">Backend Developer</div>
+        <div class="timeline-company">Kibernum · Banco BICE</div>
+        <p>Developed backend services for international transfers on OpenShift, implementing REST web services and collaborating with DevOps & QA teams for high-availability financial systems.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">Jun 2020 – Aug 2021</span>
+        <div class="timeline-role">Fullstack Developer</div>
+        <div class="timeline-company">Symbiose SPA</div>
+        <p>Built backend services with Spring Boot and Laravel, and frontends with Vue.js and Angular. Implemented a biometric system with facial and fingerprint verification integrated with Oracle/MySQL.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">Oct 2018 – Mar 2020</span>
+        <div class="timeline-role">Programmer Analyst</div>
+        <div class="timeline-company">Microdat · Banco Santander &amp; Provida</div>
+        <p>Developed REST APIs in Java with Spring Boot and Oracle DB, optimized PL/SQL queries and implemented notification systems for financial processes.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="skills" data-aos="fade-left">
@@ -379,7 +511,7 @@
         <div class="browser-dot"></div>
       </div>
 
-      <img src="project-coins.png" class="project-image">
+      <img src="project-coins.png" class="project-image" alt="CoinsDashboard preview">
 
       <div class="project-content">
         <h3>CoinsDashboard</h3>
@@ -392,6 +524,19 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<section id="github" data-aos="fade-up">
+  <h2>GitHub</h2>
+  <p style="text-align:center; margin-top:5px;">
+    Some of my open source activity and most used languages:
+  </p>
+  <div class="github-stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=EikichiS&show_icons=true&theme=tokyonight"
+         alt="GitHub stats for EikichiS">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EikichiS&layout=compact&theme=tokyonight"
+         alt="Top languages for EikichiS">
   </div>
 </section>
 
